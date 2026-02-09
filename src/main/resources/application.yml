@@ -1,0 +1,34 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: azure-keyvault-integration
+
+azure:
+  keyvault:
+    enabled: true
+    client-id: ${AZURE_CLIENT_ID:}
+    client-secret: ${AZURE_CLIENT_SECRET:}
+    tenant-id: ${AZURE_TENANT_ID:}
+    vault-url: ${AZURE_KEYVAULT_URL:}
+
+logging:
+  level:
+    com.azure: INFO
+    com.example.keyvault: INFO
+    org.springframework.boot: INFO
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+
+# Swagger/OpenAPI Configuration
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: true
+    operationsSorter: method
+    tagsSorter: alpha
+  show-actuator: false

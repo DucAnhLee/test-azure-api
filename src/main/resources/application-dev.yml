@@ -1,0 +1,14 @@
+azure:
+  keyvault:
+    enabled: true
+    # Development configuration - set these environment variables:
+    # AZURE_CLIENT_ID=your-service-principal-client-id
+    # AZURE_CLIENT_SECRET=your-service-principal-client-secret
+    # AZURE_TENANT_ID=your-azure-tenant-id
+    # AZURE_KEYVAULT_URL=https://your-keyvault-name.vault.azure.net/
+
+logging:
+  level:
+    com.azure: DEBUG
+    com.example.keyvault: DEBUG
+    org.springframework.web: DEBUG
